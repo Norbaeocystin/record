@@ -1,0 +1,20 @@
+[package]
+name = "record"
+version = "0.1.0"
+description = "Native Solana Program"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+bytemuck = { version = "1.21.0", features = ["derive"] }
+num-derive = "0.4"
+num-traits = "0.2"
+pinocchio = { version = "0.7.0" }
+
+[dev-dependencies]
+solana-program-test = "2.1.13"
+solana-sdk = "2.1.0"
+solana-program-option = "2.2.1"
+solana-program = "2.2.1"
