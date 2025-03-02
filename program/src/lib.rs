@@ -30,38 +30,3 @@ fn process_instruction(
 
 //entrypoint!(process_instruction);
 program_entrypoint!(process_instruction);
-//default_panic_handler!();
-//no_allocator!();
-
-// // Declare and export the program's entrypoint
-// entrypoint!(process_instruction);
-
-// // Program entrypoint's implementation
-// pub fn process_instruction(
-//     _program_id: &Pubkey, // Public key of the account the hello world program was loaded into
-//     accounts: &[AccountInfo], // The account to say hello to
-//     instruction_data: &[u8], // Ignored, all helloworld instructions are hellos
-// ) -> ProgramResult {
-//     let mut data = instruction_data.to_vec();
-//     // last byte is less or not less
-//     let less = data.pop().unwrap();
-//     let max_tokens = u64::from_le_bytes(data.try_into().unwrap());
-//     let accounts_iter = &mut accounts.iter();
-//     let token_account = accounts_iter
-//         .next()
-//         .ok_or(ProgramError::NotEnoughAccountKeys)?;
-//     let amount = u64::from_le_bytes(token_account.data.borrow().to_vec()[64..72].to_vec().try_into().unwrap());
-//     if less == 0 {
-//         // if amount in TA is more that as max tokens from ix - throw error
-//         if amount > max_tokens {
-//             return Err(ProgramError::ArithmeticOverflow);
-//         }
-//     }
-//     if less == 1 {
-//         // if amount in TA is less than as max tokens from ix - throw error
-//         if amount < max_tokens {
-//             return Err(ProgramError::ArithmeticOverflow);
-//         }
-//     }
-//     Ok(())
-// }
